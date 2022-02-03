@@ -81,7 +81,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
   - *Oque são tipos de dados primitivos?*
     
     Para criar algoritmos utilizamos variaveis para manipular dados, por exemplo nome, idade, altura. Para otimizar a utilização da memória, cada variavel armazena apenas um tipo de dado. 
-    A variável nome, deve armazenar textos, já a variavel idade deve armazenar apenas numeros inteiros, na variavel sexo podemos armazenar apenas caractere. 
+    A variável nome, deve armazenar textos, já a variavel idade deve armazenar apenas numeros inteiros, na variavel sexo podemos armazenar apenas caracteres. 
     
   - *Quais são os tipos de dados primitivos?*
       
@@ -117,7 +117,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
         }
         
 
-    Já a tipagem Dinâmica esta ligado a habilidade da linguagem de programação em escolger o tipo de dado de acordo com o valor atribuido á variavel em tempo de execução dinamicamente. Veja o exemplo em PHP: 
+    Já a tipagem Dinâmica esta ligado a habilidade da linguagem de programação em escolher o tipo de dado de acordo com o valor atribuido á variavel em tempo de execução dinamicamente. Veja o exemplo em PHP: 
   
           $variavel = "Elton Fonseca";
 
@@ -196,7 +196,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 
 ## 4. Linguagem Compilada x Linguagem Interpretada
 
-   Antes de entramos a fundos sobre a diferença primeiro precisamos lembrar qual é nosso objetivo ao criar um programa. Nosso foco é que o codigo que desenvolvemos seja executado pelo computador e possamos assim ver um resultado na tela, não importa qual linguagem de programação tenhamos usado. Importante lembrar que o compurador não compreende as linguagens de programação, pois ela só entende linguagem de máquina, ou seja (0 e 1) por isso precisamos transformar nosso codigo em binario. 
+   Antes de entramos a fundo sobre a diferença primeiro precisamos lembrar qual é nosso objetivo ao criar um programa. Nosso foco é que o codigo que desenvolvemos seja executado pelo computador e possamos assim ver um resultado na tela, não importa qual linguagem de programação tenhamos usado. Importante lembrar que o compurador não compreende as linguagens de programação, pois ela só entende linguagem de máquina, ou seja (0 e 1) por isso precisamos transformar nosso codigo em binario. 
     
   - *Você sabe a diferença entre linguagem compilada x linguagem interpretada?*
     
