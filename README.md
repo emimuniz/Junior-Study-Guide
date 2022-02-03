@@ -14,6 +14,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 2. **[Tipagem Estatica x Tipagem Dinamica](#2-tipagem-estatica-x-tipagem-dinamica)**
 3. **[Tipagem Fraca x Tipagem Forte](#3-tipagem-fraca-x-tipagem-forte)**
 4. **[Linguagem Compilada x Linguagem Interpretada](#4-linguagem-compilada-x-linguagem-interpretada)**
+5. **[Requisitos funcionais x Requisitos não funcionais](#5-requisitos-funcionais-x-requisitos-não-funcionais)**
 <!-- 6. **[Implícito, Explicito, Nominal, Estruturando e Chamada de métodos](#4-implícito-explícito-nominal-estruturando-e-chamada-de-métodos)**
 7. **[== vs === vs typeof](#5--vs--vs-typeof)**
 8. **[Escopo da Função, Escopo do Bloco e Escopo Léxico](#6-escopo-da-função-escopo-do-bloco-e-escopo-léxico)**
@@ -234,6 +235,51 @@ Linguagens que implementaram a técnica do JIT notaram grandes mudanças no dese
 Não ficou claro, que tal assistir um video? 
   
    * 🎥 [Como Funcionam as Linguagens](https://www.youtube.com/watch?v=Ol8KcAc7N2c&t=572s&ab_channel=EstudonautaCursos)
+
+
+**[⬆ Voltar ao topo](#conteúdos)**
+
+---
+
+## 5. Requisitos funcionais x Requisitos não funcionais
+
+   Requisitos funcionais definem o que um sistema deve fazer; isto é, quais funcionalidades ou serviços ele deve implementar. 
+   Já os requisitos não funcionais definem como um sistema deve operar, sob quais restrições e com qual qualidade de serviço. 
+   São exemplos de não funcionais:
+       - Desempenho 
+       - Disponibilidade
+       - Tolerância a falhas
+       - Segurança 
+       - Privacidade 
+       - Interoperabilidade 
+       - Capacidade
+       - Manutenibilidade
+       - Usabiidade
+       
+       
+  Que tal um exemplo?
+     Vamos supor que você tenha que informar os requisitos de um sistema home-banking. 
+     
+     Quais serão os requisitos funcionais?
+        - Informar o saldo da conta
+        - Realizar a trânsferencia entre contas
+        - Pagar o boleto bancário
+        - Cancelar um cartão de Credito 
+        
+     Quais serão os requisitos não funcionais?
+        - Desempenho: Informar o saldo da conta em menos de 5segundos.
+        - Disponibilidade: Estar no ar 99.99% do tempo.
+        - Tolerância a falhas: Continuar operando mesmo se um centro de dados sair.
+        - Segurança: Criptografar todos os dados trocados com as agências.
+        - Privacidade: Não disponibilizar para terceiros dados dos clientes.
+        - Interoperabilidade: Integrar-se com os sistemas do Banco Central.
+        - Capacidade: Ser capaz de armazenar dados de 1 milhão de clientes.
+        - Usabilidade: Ter uma versão para deficientes visuais
+     
+
+Não ficou claro, que tal assistir um video? 
+  
+   * 🎥 [Requisito Funcional e Não Funcional de Software: entenda a diferença.](https://www.youtube.com/watch?v=YLd6AWKVyas&ab_channel=pessonizando)
 
 
 **[⬆ Voltar ao topo](#conteúdos)**
