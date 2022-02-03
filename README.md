@@ -222,6 +222,15 @@ Conseguimos perceber que o processo de interpretação será mais lento, pois se
 
 Mesmo possuindo a desvantagem da performance, as linguagens interpretadas possuem a vantagem de ser mais simples de “debugar”. Como a interpretação ocorre aos poucos, podemos visualizar com mais facilidade os erros que podem aparecer, e se constatarmos algum problema, poderemos prontamente resolvê-los. Isso é uma vantagem do código interpretado em relação ao compilado, que é mais difícil de debugar, visto que o código é executado todo de uma só vez.
 
+   - JIT: 
+     Quando falamos de JIT na programação, estamos nos referindo a uma técnica que envolve mesclar conceitos de códigos compilados e interpretados. Com o JIT nós continuamos a interpretar os códigos. 
+
+Entretanto, nós também iremos compilá-los, mas apenas a parte do código que iremos usar no momento da execução. Isso representa um aumento muito grande de performance. Pois iremos usar o processo de compilação, que já é rápido, e ele será executado em partes isoladas do código, apenas na hora certa (“just in time”).
+
+Assim, nós temos à nossa disposição “o melhor dos dois mundos”. Temos a velocidade da compilação junto com a simplicidade de debugar nosso código.
+
+Linguagens que implementaram a técnica do JIT notaram grandes mudanças no desempenho dos seus códigos. Entre esses exemplos estão o JavaScript e o PHP a partir da versão 8.
+
 Não ficou claro, que tal assistir um video? 
   
    * 🎥 [Como Funcionam as Linguagens](https://www.youtube.com/watch?v=Ol8KcAc7N2c&t=572s&ab_channel=EstudonautaCursos)
