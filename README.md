@@ -15,6 +15,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 3. **[Tipagem Fraca x Tipagem Forte](#3-tipagem-fraca-x-tipagem-forte)**
 4. **[Linguagem Compilada x Linguagem Interpretada](#4-linguagem-compilada-x-linguagem-interpretada)**
 5. **[Requisitos funcionais x Requisitos não funcionais](#5-requisitos-funcionais-x-requisitos-não-funcionais)**
+6. **[Code Smells](#6-code-smells)**
 <!-- 6. **[Implícito, Explicito, Nominal, Estruturando e Chamada de métodos](#4-implícito-explícito-nominal-estruturando-e-chamada-de-métodos)**
 7. **[== vs === vs typeof](#5--vs--vs-typeof)**
 8. **[Escopo da Função, Escopo do Bloco e Escopo Léxico](#6-escopo-da-função-escopo-do-bloco-e-escopo-léxico)**
@@ -245,6 +246,7 @@ Não ficou claro, que tal assistir um video?
 
    Requisitos funcionais definem o que um sistema deve fazer; isto é, quais funcionalidades ou serviços ele deve implementar. 
    Já os requisitos não funcionais definem como um sistema deve operar, sob quais restrições e com qual qualidade de serviço. 
+   
    São exemplos de não funcionais:
        - Desempenho 
        - Disponibilidade
@@ -285,6 +287,43 @@ Não ficou claro, que tal assistir um video?
 **[⬆ Voltar ao topo](#conteúdos)**
 
 ---
+
+## 6. Code Smells
+
+   Também conhecidos como bad smells - são indicadores de código de baixa qualidade, isto é, código dificil de manter, entender, modificar ou testar. Em resumo codigo que não esta "cheirando bem" e que portanto talvez possa ser refatorada. No entanto, nessa definição, o termo "indicadores" significa que não devemos considerar que todo code smell deve ser imediatamente refatorado. Essa decisão depende de outros fatores, como importancia do trecho de codigo e a frequência com ele precisará ser mantido. 
+   
+
+   - *Código Duplicado*
+    
+   Esse principal code smell e aquele com maior potencial para prejudicar a evolução de um sistema. Codigo duplicado aumenta o esforço de manutenção, pois alterações têm que ser replicadas em mais de uma parte do código. Corre-se o risco de alterar uma parte e esquecer de uma outra. 
+    
+   - *Métodos Longos*
+   
+   Em qualquer sistema, métodos devem ser pequenos, com nomes auto-explicativos e poucas linhas de código. Métodos Longos são considerados um code smell, pois eles tornam o código mais dificil de entender e manter. Quando nos deparamos com um método longo, devemos considerar a possibilidade de usar uma estração de Método para quebra-lo em métodos menores. 
+   
+   - *Classes Grandes*
+  
+  Assim como métodos, classes não devem assumir mais responsabilidades e prover serviços que não são coesos. Por isso, Classes Grandes é considerado um code smell, pois, assim como métodos longos, elas tornam o código mais dificil de entender e manter. Além de ser mais difícil de reusar essas classes em outro pacote ou sistema. Classes grandes são caracterizadas por um grande número de atributos, com baixa coesão entre eles. 
+  
+  - *Feature Envy* 
+  
+  Esse smell designa um método que aparece "injevar" os dados e métodos de uma outra classe. Dizendo de outro modo, ele acessa mais atributos e métodos de uma classe B do que sua classe A. Portanto, deve-se analisar a possibilidade de usar Movimentação de Método para migra-lo para classe "invejada"
+  
+  - *Métodos com muitos Parâmetros*
+  
+  Além de pequenos, métodos, na medida do possivel devem ter poucos parâmetros. Isto é, metódos com muitos parâmetros é um smell, que pode ser eliminado de duas formas principais. Primeiro, deve-se verificar se um dos parametros pode ser obtido diretamente pelo método chamado. 
+
+
+
+Não ficou claro, que tal assistir um video? 
+  
+   * 🎥 [Code Smell (A arte de farejar código ruim)](https://www.youtube.com/watch?v=SQqqiC0YpA0&ab_channel=C%C3%B3digoFonteTV)
+
+
+**[⬆ Voltar ao topo](#conteúdos)**
+
+---
+
 
 <!-- ## 4. Implícito, Explícito, Nominal, Estruturando e Chamada de métodos
 
