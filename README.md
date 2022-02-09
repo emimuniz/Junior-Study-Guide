@@ -6,16 +6,17 @@
 
 ## Introdução
 
-Este repositório foi criado com a intenção de compartilhar oque venho aprendendo durante esse tempo na área. 
+Este repositório foi criado com a intenção de compartilhar oque venho aprendendo durante esse tempo na área para pessoas iniciantes.  
 
 ## Conteúdos
 
-1. **[Tipos primitivos](#1-tipos-primitivos)**
-2. **[Tipagem Estatica x Tipagem Dinamica](#2-tipagem-estatica-x-tipagem-dinamica)**
-3. **[Tipagem Fraca x Tipagem Forte](#3-tipagem-fraca-x-tipagem-forte)**
-4. **[Linguagem Compilada x Linguagem Interpretada](#4-linguagem-compilada-x-linguagem-interpretada)**
-5. **[Requisitos funcionais x Requisitos não funcionais](#5-requisitos-funcionais-x-requisitos-não-funcionais)**
-6. **[Code Smells](#6-code-smells)**
+1. **[Como funciona a Internet](#1-como-funciona-a-internet)**
+2. **[Tipos primitivos](#2-tipos-primitivos)**
+3. **[Tipagem Estatica x Tipagem Dinamica](#3-tipagem-estatica-x-tipagem-dinamica)**
+4. **[Tipagem Fraca x Tipagem Forte](#4-tipagem-fraca-x-tipagem-forte)**
+5. **[Linguagem Compilada x Linguagem Interpretada](#5-linguagem-compilada-x-linguagem-interpretada)**
+6. **[Requisitos funcionais x Requisitos não funcionais](#6-requisitos-funcionais-x-requisitos-não-funcionais)**
+7. **[Code Smells](#7-code-smells)**
 <!-- 6. **[Implícito, Explicito, Nominal, Estruturando e Chamada de métodos](#4-implícito-explícito-nominal-estruturando-e-chamada-de-métodos)**
 7. **[== vs === vs typeof](#5--vs--vs-typeof)**
 8. **[Escopo da Função, Escopo do Bloco e Escopo Léxico](#6-escopo-da-função-escopo-do-bloco-e-escopo-léxico)**
@@ -78,7 +79,83 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 
 ---
 
-## 1. Tipos primitivos
+
+## 1. Como funciona a internet?
+    
+   A internet é uma rede que interconecta computadores e outros dispositivos como seu celular em escala global para a transfêrencia de dados entre eles. Já o World Wide Web é uma aplicação onde páginas são interligadas através de links e que se utiliza da internet para funcionar. 
+    
+  - *Você sabe como os computadores comunicam entre si?*
+
+       Toda comunicação é realizada por uma interconexão entre computadores que permite que essa comunicação entre si seja realizada, chamado de rede de computadores. Esta comunicação pode ser feita através de cabos ou sem fios. 
+            
+      ![image](https://user-images.githubusercontent.com/31746775/153097067-94a86673-c698-4836-b58e-774081130d5d.png)
+
+  - *Bora para um exemplo?*
+       
+       Vamos supor que você queira acessar o site https://g1.globo.com/ para ler algumas noticias. Você abre seu navegador e digita o endereço, e passos poucos segundos, a página inicial do site é exibida. 
+       
+   - *Como tudo isso funciona?*
+        
+        Isso acontece porque os computadores possuem um endereço numérico unico chamado endereço IP, e além desse endereço, possui inúmeras portas por onde as aplicaçãoes e processos se comunicam. Para que você acesse a página desejada, de fato, o seu computador precisa antes estabelecer uma conexão com o compuador onde a pagina solicitada está hospedada. 
+        
+        Vamos supor que o cliente de endereço IP 177.178.79.80, queira através da porta 65000, iniciar uma conexão com o servidor de endereço IP  185.186.87.88 na porta 80 para obter a página inicial do G1.
+        
+        ![image](https://user-images.githubusercontent.com/31746775/153097968-072b3764-c97d-4745-8c17-47ac669f403d.png)
+
+   - *Você sabe oque é DNS e portas conhecidas?*
+   
+      Quando um computador está ligado em rede, ele está configurado para acessar um servidor especial chamado servidor de nomes ou servidor DNS, como é mais conhecido. Este servidor funciona como uma lista telefônica.
+
+      Quando digitamos https://g1.globo.com/ na barra de endereços, estamos informando o endereço ou a URL (Uniform Resource Locator) do site que desejamos acessar. Se o navegador não conhecer o endereço IP para esta URL – afinal, ele deve visitá-la várias vezes ao dia 🙂 – ele se conecta ao servidor DNS e pergunta: 
+      
+          Olá, tudo bem? Tenho a URL https://g1.globo.com/, você pode me informar o endereço IP dela? 
+          Eis que o servidor DNS responde: Pois não, o endereço IP desta URL é 185.186.87.88.
+
+      As portas disponíveis num computador, elas são conhecidas de acordo com o serviço que oferecem. Se precisar de um serviço de transferência de arquivos ou FTP, ele pode ser encontrado na porta 21. Se precisar de um shell remoto e seguro ou SSH, ele estará na porta 22. Se precisar de um serviço de entrega de e-mail ou SMTP, ele estará na porta 25. Ou, ainda, se precisar de um serviço de entrega de páginas web, ele estará na porta 80.
+
+      Todos como se fossem os estabelecimentos do bairro onde você mora, muito bem conhecidos e raramente mudam de lugar.
+
+      O servidor DNS funciona como uma lista telefônica para encontrar o endereço IP da URL solicitada. Já as portas são conhecidas de acordo com os serviços oferecidos. O serviço de entrega de páginas web encontra-se na porta 80 e o serviço de entrega de e-mail encontra-se na porta 25, por exemplo.
+
+      - *TCP/IP, como os computadores se comunicam*
+       
+        Uma vez conhecido o endereço IP do destino e a porta na qual deseja se conectar, o cliente precisa estabelecer uma conexão com o servidor. A conexão é estabelecida da seguinte maneira:
+
+            Cliente: Boa tarde 185.186.87.88, desejo estabelecer uma conexão na porta 80?
+            Servidor: Boa tarde 177.178.79.80. Pode realizar a conexão.
+            Cliente: Ok, iniciarei a conexão. Os pacotes começam a ser enviados a partir deste momento…
+
+      Este tipo de conexão utiliza o protocolo TCP ou Transmission Control Protocol e é através deste protocolo que o cliente e o servidor conversam entre si. Através desta conexão ocorre o envio de pacotes, fragmentos menores dos dados que serão trafegados que contém informações como a porta de origem, a porta de destino e a sequência que devem ser reconstruídos ao chegar no destino.
+
+      Este é um tipo especial de conexão pois ela é ponto-a-ponto, ou seja, a comunicação pode ser feita em duas vias (o cliente fala com o servidor e o servidor fala com o cliente). Outra característica importante é a garantia de entrega onde todos os pacotes que saem da origem possuem a garantia de que chegarão ao destino e que serão entregues de forma ordenada e sem modificações. Outra característica importante ainda é o controle de fluxo que controla a quantidade de pacotes enviados ou recebidos aumentando ou diminuindo de acordo com a necessidade.
+      
+<!-- 
+      Ou, numa breve alusão ao serviço de correios de carta registrada, as suas correspondências chegarão ao destino, na ordem correta e não serão violadas ou abertas. E, se sua caixa de correio da sua casa estiver cheia, as correspondências serão entregues numa frequência menor até que sua caixa de correio tenha mais espaço!
+
+      O TCP é um protocolo de rede que permite a comunicação entre computadores e uma conexão deve ser estabelecida antes do início do envio de pacotes. Ele é um protocolo ponto-a-ponto, possui garantia de entrega de pacotes de forma ordenada e sem modificações e possui controle de fluxo.
+
+      Certo, mas o que acontece quando a conexão é estabelecida? Existe uma aplicação conhecida como servidor web que recebe e manipula todos os pacotes que vem pela porta 80. Vamos ver o seu funcionamento mais adiante…
+
+      HTTP, o idioma dos navegadores e servidores web!
+      Imagine o seguinte, você mora no prédio localizado no endereço IP 185.186.87.88 e o seu apartamento é o de número 80. O seu trabalho é enviar páginas com as informações variadas para quem as solicita através do correio. Uma pessoa qualquer te envia uma carta solicitando uma página com informações sobre futebol, por exemplo. Você recebe esta carta, abre ela, analisa a solicitação, monta a página com a informação solicitada, coloca a página num envelope e a envia de volta para o remetente. Só que esta comunicação se dá num idioma próprio, que somente vocês entendem.
+
+      Se alguém, por engano, enviar uma carta solicitando uma página com informações sobre viagens para o seu vizinho do 21, o Sr. Fábio Teixeira Pimentel (ou FTP para os íntimos), não receberá nada de volta. Isso acontece porque ele não entenderá o idioma escrito na carta e, de qualquer forma, ele só trabalha com transferência de arquivos e não com o envio de páginas.
+
+      Esse idioma é o HTTP ou Hypertext Transfer Protocol e é o idioma que os navegadores e os servidores web conversam. É através deste idioma que o seu navegador informa ao servidor web qual a sua versão, qual o seu idioma, se aceita conteúdo compactado ou não e qual página foi solicitada. E, da mesma forma, é através deste idioma que o servidor web informa ao seu navegador se a página solicitada existe, qual o seu formato, se a página enviada foi compactada, se existe algum cookie para ser gravado no seu computador e, principalmente, o conteúdo da página solicitada.
+
+      Quando o navegador solicita uma página web é chamado de requisição e quando o servidor web envia a página web solicitada de volta para o navegador é chamado de resposta. Cada requisição realizada pelo navegador é independente umas das outras e, por este motivo, o HTTP é considerado um protocolo sem estado ou stateless. E o que isso quer dizer? Quando você realiza uma nova requisição (ao mudar de página no site, por exemplo) o servidor web não lembra que você realizou uma requisição anterior. -->
+
+        
+  
+  Não ficou claro, que tal assistir um video? 
+  
+   * 🎥 [Tipos Primitivos - Curso Introdutório de JavaScript GRATUITO | Trybe](https://www.youtube.com/watch?v=a1NiHwH9clE&ab_channel=Trybe)
+
+**[⬆ Voltar ao topo](#conteúdos)**
+   
+---
+
+## 2. Tipos primitivos
 
   - *Oque são tipos de dados primitivos?*
     
@@ -103,7 +180,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
    
 ---
 
-## 2. Tipagem Estatica x Tipagem Dinamica
+## 3. Tipagem Estatica x Tipagem Dinamica
 
   - *Você sabe a diferença entre tipagem Estatica e Dinâmica?*
     
@@ -164,7 +241,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 
 ---
 
-## 3. Tipagem Fraca x Tipagem Forte
+## 4. Tipagem Fraca x Tipagem Forte
 
   - *Você sabe a diferença entre tipagem fraca e forte?*
     
@@ -196,7 +273,7 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
 
 ---
 
-## 4. Linguagem Compilada x Linguagem Interpretada
+## 5. Linguagem Compilada x Linguagem Interpretada
 
    Antes de entramos a fundo sobre a diferença primeiro precisamos lembrar qual é nosso objetivo ao criar um programa. Nosso foco é que o codigo que desenvolvemos seja executado pelo computador e possamos assim ver um resultado na tela, não importa qual linguagem de programação tenhamos usado. Importante lembrar que o compurador não compreende as linguagens de programação, pois ela só entende linguagem de máquina, ou seja (0 e 1) por isso precisamos transformar nosso codigo em binario. 
     
@@ -242,7 +319,7 @@ Não ficou claro, que tal assistir um video?
 
 ---
 
-## 5. Requisitos funcionais x Requisitos não funcionais
+## 6. Requisitos funcionais x Requisitos não funcionais
 
    Requisitos funcionais definem o que um sistema deve fazer; isto é, quais funcionalidades ou serviços ele deve implementar. 
    Já os requisitos não funcionais definem como um sistema deve operar, sob quais restrições e com qual qualidade de serviço. 
@@ -288,7 +365,7 @@ Não ficou claro, que tal assistir um video?
 
 ---
 
-## 6. Code Smells
+## 7. Code Smells
 
    Também conhecidos como bad smells - são indicadores de código de baixa qualidade, isto é, código dificil de manter, entender, modificar ou testar. Em resumo codigo que não esta "cheirando bem" e que portanto talvez possa ser refatorada. No entanto, nessa definição, o termo "indicadores" significa que não devemos considerar que todo code smell deve ser imediatamente refatorado. Essa decisão depende de outros fatores, como importancia do trecho de codigo e a frequência com ele precisará ser mantido. 
    
