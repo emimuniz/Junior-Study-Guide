@@ -146,10 +146,6 @@ Este repositório foi criado com a intenção de compartilhar oque venho aprende
       Quando o navegador solicita uma página web é chamado de requisição e quando o servidor web envia a página web solicitada de volta para o navegador é chamado de resposta. Cada requisição realizada pelo navegador é independente umas das outras e, por este motivo, o HTTP é considerado um protocolo sem estado ou stateless. E o que isso quer dizer? Quando você realiza uma nova requisição (ao mudar de página no site, por exemplo) o servidor web não lembra que você realizou uma requisição anterior. -->
 
         
-  
-  Não ficou claro, que tal assistir um video? 
-  
-   * 🎥 [Tipos Primitivos - Curso Introdutório de JavaScript GRATUITO | Trybe](https://www.youtube.com/watch?v=a1NiHwH9clE&ab_channel=Trybe)
 
 **[⬆ Voltar ao topo](#conteúdos)**
    
